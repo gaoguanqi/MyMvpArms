@@ -1,0 +1,236 @@
+{
+  "channelInfoList": [
+    {
+      "channel": "official",
+      "alias": "官网",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "1",
+        "UMENG_CHANNEL": "official"
+      }
+    },
+    {
+      "channel": "360_shouji",
+      "alias": "360",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "2",
+        "UMENG_CHANNEL": "360_shouji"
+      }
+    },
+    {
+      "channel": "wandoujia",
+      "alias": "豌豆荚",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "3",
+        "UMENG_CHANNEL": "wandoujia"
+      }
+    },
+    {
+      "channel": "yingyonbao",
+      "alias": "应用宝",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "4",
+        "UMENG_CHANNEL": "yingyonbao"
+      }
+    },
+    {
+      "channel": "baidu_shouji",
+      "alias": "百度手机助手",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "5",
+        "UMENG_CHANNEL": "baidu_shouji"
+      }
+    },
+    {
+      "channel": "pp_shouji",
+      "alias": "PP手机助手",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "6",
+        "UMENG_CHANNEL": "pp_shouji"
+      }
+    },
+    {
+      "channel": "xiaomi",
+      "alias": "小米市场",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "7",
+        "UMENG_CHANNEL": "xiaomi"
+      }
+    },
+    {
+      "channel": "keke",
+      "alias": "可可市场",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "8",
+        "UMENG_CHANNEL": "keke"
+      }
+    },
+    {
+      "channel": "yiyonghui",
+      "alias": "易用汇",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "9",
+        "UMENG_CHANNEL": "yiyonghui"
+      }
+    },
+    {
+      "channel": "jifeng",
+      "alias": "机锋市场",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "10",
+        "UMENG_CHANNEL": "jifeng"
+      }
+    },
+    {
+      "channel": "sougou_shouji",
+      "alias": "搜狗",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "11",
+        "UMENG_CHANNEL": "sougou_shouji"
+      }
+    },
+    {
+      "channel": "yingyonhui",
+      "alias": "应用汇",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "12",
+        "UMENG_CHANNEL": "yingyonhui"
+      }
+    },
+    {
+      "channel": "mumayi",
+      "alias": "木蚂蚁",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "13",
+        "UMENG_CHANNEL": "mumayi"
+      }
+    },
+    {
+      "channel": "anzhi",
+      "alias": "安智市场",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "14",
+        "UMENG_CHANNEL": "anzhi"
+      }
+    },
+    {
+      "channel": "meizu",
+      "alias": "魅族",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "15",
+        "UMENG_CHANNEL": "meizu"
+      }
+    },
+    {
+      "channel": "huawei",
+      "alias": "华为",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "16",
+        "UMENG_CHANNEL": "huawei"
+      }
+    },
+    {
+      "channel": "leshi",
+      "alias": "乐视",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "17",
+        "UMENG_CHANNEL": "leshi"
+      }
+    },
+    {
+      "channel": "shenma",
+      "alias": "神马",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "18",
+        "UMENG_CHANNEL": "shenma"
+      }
+    },
+    {
+      "channel": "vivo",
+      "alias": "vivo",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "19",
+        "UMENG_CHANNEL": "vivo"
+      }
+    },
+    {
+      "channel": "oppo",
+      "alias": "oppo",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "20",
+        "UMENG_CHANNEL": "oppo"
+      }
+    },
+    {
+      "channel": "jinli",
+      "alias": "金立",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "21",
+        "UMENG_CHANNEL": "jinli"
+      }
+    },
+    {
+      "channel": "kupai",
+      "alias": "酷派",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "22",
+        "UMENG_CHANNEL": "kupai"
+      }
+    },
+    {
+      "channel": "samsung",
+      "alias": "三星",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "23",
+        "UMENG_CHANNEL": "samsung"
+      }
+    },
+    {
+      "channel": "UC",
+      "alias": "UC",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "24",
+        "UMENG_CHANNEL": "UC"
+      }
+    },
+    {
+      "channel": "tianyi",
+      "alias": "天翼",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "25",
+        "UMENG_CHANNEL": "tianyi"
+      }
+    },
+    {
+      "channel": "yidongmm",
+      "alias": "移动MM",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "26",
+        "UMENG_CHANNEL": "yidongmm"
+      }
+    },
+    {
+      "channel": "liantongwo",
+      "alias": "联通WO",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "27",
+        "UMENG_CHANNEL": "liantongwo"
+      }
+    },
+    {
+      "channel": "lianxiang",
+      "alias": "乐商店",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "28",
+        "UMENG_CHANNEL": "lianxiang"
+      }
+    },
+    {
+      "channel": "91",
+      "alias": "91市场",
+      "extraInfo": {
+        "INSTALL_CHANNEL": "29",
+        "UMENG_CHANNEL": "91"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center">
+
+    <maple.demo.com.mymvparms.widget.MaterialProgress
+        android:id="@+id/loading_progress"
+        android:layout_width="160px"
+        android:layout_height="160px" />
+
+</com.zhy.autolayout.AutoLinearLayout>

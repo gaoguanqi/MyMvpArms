@@ -1,0 +1,147 @@
+apply plugin: 'com.android.application'
+// 使用GreenDao
+apply plugin: 'org.greenrobot.greendao'
+// 依赖tinker插件脚本
+apply from: 'tinker-support.gradle'
+//Bugly符号表插件
+apply plugin: 'bugly'
+//美团walle多渠道打包
+apply plugin: 'walle'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+    useLibrary 'org.apache.http.legacy'
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId "maple.demo.com.mymvparms"
+
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a"//, "x86", "mips"
+        }
+
+        buildConfigField 'String', 'BUGLY_APPID', '"bd4c555249"'
+        buildConfigField 'String', 'GAREN_SERVER_URL', '"http://www.baidu.com"'
+    }
+
+    //GreenDao配置
+    greendao {
+        //版本号，升级时可配置
+        schemaVersion 1
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('keystore/MapleKeyStore.jks')
+            storePassword "gaoguanqi"
+            keyAlias "Maple"
+            keyPassword "gaoguanqi"
+        }
+        release {
+            storeFile file('keystore/MapleKeyStore.jks')
+            storePassword "gaoguanqi"
+            keyAlias "Maple"
+            keyPassword "gaoguanqi"
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+        }
+        release {
+            debuggable false
+            //移除无用的资源文件
+            shrinkResources true
+            zipAlignEnabled true
+            minifyEnabled true
+            signingConfig signingConfigs.release//需要使用正式证书签名，才能发布到fir.im
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //添加如下配置就ok了
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+        jumboMode = true
+    }
+}
+
+bugly {
+    appId = '<bd4c555249>' // 注册时分配的App ID
+    appKey = '<205abf30-487a-42b5-a793-4980a0b68965>' // 注册时分配的App Key
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    //support
+    implementation(rootProject.ext.dependencies["cardview-v7"]) {
+        exclude module: 'support-annotations'
+    }
+    //rxbinding
+    implementation rootProject.ext.dependencies["rxbinding"]
+    //tools
+    annotationProcessor rootProject.ext.dependencies["dagger2-compiler"]
+    implementation rootProject.ext.dependencies["progressmanager"]
+    implementation rootProject.ext.dependencies["retrofit-url-manager"]
+    //打包神器walle
+    implementation rootProject.ext.dependencies["walle"]
+    //数据库
+    implementation rootProject.ext.dependencies["greendao"]
+    implementation rootProject.ext.dependencies["GreenDaoUpgradeHelper"]
+    //状态栏
+    implementation rootProject.ext.dependencies["barlibrary"]
+    //bugly
+    implementation rootProject.ext.dependencies["bugly"]
+    implementation rootProject.ext.dependencies["bugly-native"]
+
+    //log
+    implementation rootProject.ext.dependencies["logger"]
+    //view
+    annotationProcessor(rootProject.ext.dependencies["butterknife-compiler"]) {
+        exclude module: 'support-annotations'
+    }
+    implementation rootProject.ext.dependencies["paginate"]
+    implementation rootProject.ext.dependencies["mvp-arms"]
+    //test
+    testImplementation rootProject.ext.dependencies["junit"]
+    debugImplementation rootProject.ext.dependencies["canary-debug"]
+    releaseImplementation rootProject.ext.dependencies["canary-release"]
+    testImplementation rootProject.ext.dependencies["canary-release"]
+
+    implementation rootProject.ext.dependencies["percent"]
+
+    // 小圆点
+    //https://github.com/sathishmscict/PageIndicatorViewNew
+    implementation 'com.romandanylyk:pageindicatorview:1.0.0'
+}
+
+walle {
+    apkOutputFolder = new File("${project.buildDir}/outputs/channels")
+    apkFileNameFormat = '${projectName}-${channel}-${buildType}-v${versionName}.apk'
+    configFile = new File("${project.getProjectDir()}/config.json")
+}

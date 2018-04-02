@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jess.arms.widget.autolayout.AutoToolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="100px"
+    android:background="@color/toolbar_color"
+    app:contentInsetStart="0dp">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="left|center_vertical">
+
+        <ImageView
+            android:id="@+id/toolbar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30px"
+            android:paddingRight="15px"
+            android:visibility="gone"
+            android:src="@drawable/selector_arrow_back_black" />
+
+        <TextView
+            android:id="@+id/toolbar_left_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="15px"
+            android:paddingRight="30px"
+            android:textColor="@color/black"
+            android:textSize="36px"
+            android:visibility="gone"
+            tools:text="关闭" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        tools:text="@string/app_name" />
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:gravity="right|center_vertical">
+
+        <TextView
+            android:id="@+id/toolbar_right_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="30px"
+            android:paddingRight="30px"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:visibility="gone"
+            tools:text="关闭" />
+
+        <ImageView
+            android:id="@+id/toolbar_right_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="30px"
+            android:src="@mipmap/icon_arrow_back_white"
+            android:visibility="gone" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.jess.arms.widget.autolayout.AutoToolbar>

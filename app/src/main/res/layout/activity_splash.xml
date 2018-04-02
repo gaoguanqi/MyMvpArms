@@ -1,0 +1,37 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="maple.demo.com.mymvparms.mvp.ui.activity.SplashActivity">
+
+    <maple.demo.com.mymvparms.widget.CountDownView
+        android:id="@+id/cd_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cd_animator_time="8"
+        app:cd_arc_color="#FFFFFF"
+        app:cd_arc_width="3dp"
+        app:cd_bg_color="#AABBCC"
+        app:cd_circle_radius="20dp"
+        app:cd_location="top"
+        app:cd_retreat_type="forward"
+        app:cd_text_color="#000000"
+        app:cd_text_size="@dimen/font_minimum"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp" />
+
+    <Button
+        android:id="@+id/btn_skip"
+        android:layout_width="62dp"
+        android:layout_height="26dp"
+        android:text="跳过"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/selector_app_btn" />
+</android.support.constraint.ConstraintLayout>

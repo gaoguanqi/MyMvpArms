@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/trans">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_dialog_loading"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp">
+
+        <maple.demo.com.mymvparms.widget.dialog.PerryLoader
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:image="@drawable/ic_progress_spinner"
+            app:imageHeight="20dp" />
+
+        <TextView
+            android:id="@+id/progress_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:text="@string/loading"
+            android:textColor="#888888"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</FrameLayout>
