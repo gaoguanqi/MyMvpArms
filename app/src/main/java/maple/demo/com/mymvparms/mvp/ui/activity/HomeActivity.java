@@ -52,9 +52,11 @@ public class HomeActivity extends BaseViewActivity<HomePresenter> implements Hom
     BottomNavigationView bottomNavigationView;
     @Inject
     HomePresenter mPresenter;
+    @Inject
+    HomePagerAdapter mPagerAdapter;
 
     private long lastBackPressedMillis;
-    private HomePagerAdapter mPagerAdapter;
+
 
 
     @Override
@@ -74,10 +76,7 @@ public class HomeActivity extends BaseViewActivity<HomePresenter> implements Hom
     @Override
     public void initData(Bundle savedInstanceState) {
         SharedPrefUtils.putBoolean(AppConstant.SaveInfoKey.HASLANCHER,false);
-        List<Fragment> mList = new ArrayList<>();
-        mList.add(MainFragment.getInstance());
-        mList.add(MineFragment.getInstance());
-        mPagerAdapter = new HomePagerAdapter(this.getSupportFragmentManager(),mList);
+
         viewPager.setAdapter(mPagerAdapter);
         viewPager.setCurrentItem(0);
 
