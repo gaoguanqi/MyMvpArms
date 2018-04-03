@@ -17,6 +17,7 @@ public class AppController {
     private Application mApplication = null;
     private Context mContext = null;
 
+
     public void init(Application application, Context context) {
         this.mApplication = application;
         this.mContext = context;
