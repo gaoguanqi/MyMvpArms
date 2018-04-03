@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 
+import javax.inject.Inject;
+
 import maple.demo.com.mymvparms.R;
 import maple.demo.com.mymvparms.base.BaseLazyFragment;
 import maple.demo.com.mymvparms.mvp.contract.MineContract;
@@ -22,6 +24,9 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
  */
 
 public class MineFragment extends BaseLazyFragment<MinePresenter> implements MineContract.View{
+
+    @Inject
+    MinePresenter mPresenter;
 
     public static Fragment getInstance() {
         return new MineFragment();

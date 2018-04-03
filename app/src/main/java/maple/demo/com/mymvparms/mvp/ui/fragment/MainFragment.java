@@ -9,8 +9,12 @@ import android.view.ViewGroup;
 
 import com.jess.arms.di.component.AppComponent;
 
+import javax.inject.Inject;
+
 import maple.demo.com.mymvparms.R;
 import maple.demo.com.mymvparms.base.BaseLazyFragment;
+import maple.demo.com.mymvparms.di.component.DaggerHomeComponent;
+import maple.demo.com.mymvparms.di.module.HomeModule;
 import maple.demo.com.mymvparms.mvp.contract.MainContract;
 import maple.demo.com.mymvparms.mvp.presenter.MainPresenter;
 
@@ -19,6 +23,8 @@ import maple.demo.com.mymvparms.mvp.presenter.MainPresenter;
  */
 
 public class MainFragment extends BaseLazyFragment<MainPresenter> implements MainContract.View{
+    @Inject
+    MainPresenter mPresenter;
     public static Fragment getInstance() {
         return new MainFragment();
     }
