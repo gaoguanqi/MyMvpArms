@@ -19,8 +19,8 @@
             android:layout_height="wrap_content"
             android:paddingLeft="30px"
             android:paddingRight="15px"
-            android:visibility="gone"
-            android:src="@drawable/selector_arrow_back_black" />
+            android:src="@drawable/selector_arrow_back_black"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/toolbar_left_text"
