@@ -102,7 +102,7 @@ public class HomeActivity extends BaseViewActivity<HomePresenter> implements Hom
         mImmersionBar.keyboardEnable(true)
                 .navigationBarWithKitkatEnable(false)
                 .navigationBarEnable(false)
-                .titleBar(R.id.title)
+                .titleBar(title)
                 .init();
     }
 

@@ -191,7 +191,7 @@ public abstract class BaseViewActivity<P extends IPresenter> extends AppCompatAc
                 .navigationBarWithKitkatEnable(false)
                 .navigationBarEnable(false)
                 .statusBarColor(R.color.colorPrimaryDark)
-                .statusBarDarkFont(true, 0.2f)
+                .statusBarDarkFont(false, 0.2f)
                 .init();
     }
 

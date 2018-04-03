@@ -32,7 +32,7 @@ android {
         }
 
         buildConfigField 'String', 'BUGLY_APPID', '"bd4c555249"'
-        buildConfigField 'String', 'GAREN_SERVER_URL', '"http://www.baidu.com"'
+        buildConfigField 'String', 'GAREN_SERVER_URL', '"https://www.apiopen.top"'
     }
 
     //GreenDao配置

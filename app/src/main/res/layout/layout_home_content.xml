@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="148px"
+        android:layout_height="146px"
         android:background="@color/toolbar_color"
         android:textColor="@color/white"
         android:textSize="@dimen/font_big"

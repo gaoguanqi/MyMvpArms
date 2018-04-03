@@ -1,5 +1,7 @@
 package maple.demo.com.mymvparms.di.module;
 
+import android.support.v7.widget.LinearLayoutManager;
+
 import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.di.scope.FragmentScope;
 
@@ -34,5 +36,11 @@ public class MainModule {
     @Provides
     MainContract.Model provideMainModel(MainModel model) {
         return model;
+    }
+
+    @FragmentScope
+    @Provides
+    LinearLayoutManager provideLinearLayoutManager() {
+        return new LinearLayoutManager(view.getActivity());
     }
 }
