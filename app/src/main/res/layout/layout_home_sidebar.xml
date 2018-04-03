@@ -33,9 +33,26 @@
                 android:text="name" />
         </com.zhy.autolayout.AutoRelativeLayout>
 
-        <Button
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_setting"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="button" />
+            android:layout_height="100px"
+            android:background="@drawable/selector_default_btn">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="设置"
+                android:drawableLeft="@android:drawable/ic_menu_manage"
+                android:layout_alignParentLeft="true" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_save"
+                android:layout_alignParentRight="true" />
+        </com.zhy.autolayout.AutoRelativeLayout>
     </com.zhy.autolayout.AutoLinearLayout>
 </android.support.v4.widget.NestedScrollView>

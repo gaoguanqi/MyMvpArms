@@ -186,14 +186,13 @@ public abstract class BaseViewActivity<P extends IPresenter> extends AppCompatAc
     protected void initImmersionBar() {
         mImmersionBar = ImmersionBar.with(this);
         //设置状态栏字体为黑色，如果当前设备不支持状态栏字体变色，会使当前状态栏加上透明度
-//        mImmersionBar.fitsSystemWindows(true)  //使用该属性,必须指定状态栏颜色
-//                .keyboardEnable(true)
-//                .navigationBarWithKitkatEnable(false)
-//                .navigationBarEnable(false)
-//                .statusBarColor(R.color.colorPrimaryDark)
-//                .statusBarDarkFont(true, 0.2f)
-//                .init();
-        mImmersionBar.init();
+        mImmersionBar.fitsSystemWindows(true)  //使用该属性,必须指定状态栏颜色
+                .keyboardEnable(true)
+                .navigationBarWithKitkatEnable(false)
+                .navigationBarEnable(false)
+                .statusBarColor(R.color.colorPrimaryDark)
+                .statusBarDarkFont(true, 0.2f)
+                .init();
     }
 
     @Override

@@ -1,6 +1,7 @@
 package maple.demo.com.mymvparms.mvp.ui.activity;
 
 import android.app.Activity;
+import android.app.LauncherActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,12 +14,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.gyf.barlibrary.ImmersionBar;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.zhy.autolayout.AutoRelativeLayout;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,8 +47,8 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 public class HomeActivity extends BaseViewActivity<HomePresenter> implements HomeContract.View {
 
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
+    @BindView(R.id.title)
+    TextView title;
     @BindView(R.id.viewPaper)
     NoSlidingViewPaper viewPager;
     @BindView(R.id.btottomnav_view)
@@ -99,7 +102,7 @@ public class HomeActivity extends BaseViewActivity<HomePresenter> implements Hom
         mImmersionBar.keyboardEnable(true)
                 .navigationBarWithKitkatEnable(false)
                 .navigationBarEnable(false)
-                .titleBar(R.id.toolbar)
+                .titleBar(R.id.title)
                 .init();
     }
 
@@ -118,6 +121,19 @@ public class HomeActivity extends BaseViewActivity<HomePresenter> implements Hom
 
     }
 
+
+    @OnClick({R.id.iv_heard,R.id.tv_heard,R.id.rl_setting})
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.iv_heard:
+            case R.id.tv_heard:
+                showMessage("个人中心");
+                break;
+            case R.id.rl_setting:
+                launchActivity(new Intent(this,SettingActivity.class));
+                break;
+        }
+    }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
