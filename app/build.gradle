@@ -113,7 +113,7 @@ dependencies {
     //数据库
     implementation rootProject.ext.dependencies["greendao"]
     implementation rootProject.ext.dependencies["GreenDaoUpgradeHelper"]
-    //状态栏
+    //状态栏 https://github.com/gyf-dev/ImmersionBar
     implementation rootProject.ext.dependencies["barlibrary"]
     //bugly
     implementation rootProject.ext.dependencies["bugly"]

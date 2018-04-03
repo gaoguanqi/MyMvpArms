@@ -13,6 +13,7 @@ public class AppConstant {
         public static final String PHONE = "phone";
         public static final String USER_ID = "userid";
 
+        //是否第一次启动的KEY
         public static final String HASLANCHER = "hasLancher";
     }
 

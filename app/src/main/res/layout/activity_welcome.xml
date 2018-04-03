@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context="maple.demo.com.mymvparms.mvp.ui.activity.WelcomeActivity">
 
+    <include layout="@layout/include_title"
+        app:layout_constraintTop_toTopOf="parent" />
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"

@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
-    android:layout_height="100px"
+    android:layout_height="wrap_content"
     android:background="@color/toolbar_color"
     app:contentInsetStart="0dp">
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="left|center_vertical">
 
         <ImageView

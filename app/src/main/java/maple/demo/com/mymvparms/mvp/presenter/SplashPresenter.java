@@ -8,8 +8,10 @@ import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.mvp.BasePresenter;
 import com.jess.arms.http.imageloader.ImageLoader;
 
+import maple.demo.com.mymvparms.config.AppConstant;
 import maple.demo.com.mymvparms.mvp.ui.activity.HomeActivity;
 import maple.demo.com.mymvparms.mvp.ui.activity.WelcomeActivity;
+import maple.demo.com.mymvparms.utils.SharedPrefUtils;
 import maple.demo.com.mymvparms.widget.CountDownView;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 
@@ -50,8 +52,7 @@ public class SplashPresenter extends BasePresenter<SplashContract.Model, SplashC
         countDownView.setOnLoadingFinishListener(new CountDownView.OnLoadingFinishListener() {
             @Override
             public void finish() {
-                mRootView.launchActivity(new Intent(mRootView.getActivity(),HomeActivity.class));
-                mRootView.killMyself();
+                launchDirection();
             }
         });
     }
@@ -61,7 +62,17 @@ public class SplashPresenter extends BasePresenter<SplashContract.Model, SplashC
         if(countDownView != null){
             countDownView.cancle();
         }
-        mRootView.launchActivity(new Intent(mRootView.getActivity(),HomeActivity.class));
+        launchDirection();
+    }
+
+    private void launchDirection(){
+        Intent intent;
+        if(SharedPrefUtils.getBoolean(AppConstant.SaveInfoKey.HASLANCHER,true)){
+             intent = new Intent(mRootView.getActivity(),WelcomeActivity.class);
+        }else{
+            intent = new Intent(mRootView.getActivity(),HomeActivity.class);
+        }
+        mRootView.launchActivity(intent);
         mRootView.killMyself();
     }
 }

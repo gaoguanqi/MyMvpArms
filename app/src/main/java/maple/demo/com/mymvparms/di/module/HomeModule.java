@@ -1,12 +1,22 @@
 package maple.demo.com.mymvparms.di.module;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
+
+import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.scope.ActivityScope;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import dagger.Module;
 import dagger.Provides;
 
 import maple.demo.com.mymvparms.mvp.contract.HomeContract;
 import maple.demo.com.mymvparms.mvp.model.HomeModel;
+import maple.demo.com.mymvparms.mvp.ui.activity.HomeActivity;
+import maple.demo.com.mymvparms.mvp.ui.adapter.HomePagerAdapter;
 
 
 @Module

@@ -1,28 +1,60 @@
 package maple.demo.com.mymvparms.mvp.ui.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
+import com.gyf.barlibrary.ImmersionBar;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.zhy.autolayout.AutoRelativeLayout;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import maple.demo.com.mymvparms.R;
 import maple.demo.com.mymvparms.base.BaseViewActivity;
+import maple.demo.com.mymvparms.config.AppConstant;
 import maple.demo.com.mymvparms.di.component.DaggerHomeComponent;
 import maple.demo.com.mymvparms.di.module.HomeModule;
 import maple.demo.com.mymvparms.mvp.contract.HomeContract;
 import maple.demo.com.mymvparms.mvp.presenter.HomePresenter;
+import maple.demo.com.mymvparms.mvp.ui.adapter.HomePagerAdapter;
+import maple.demo.com.mymvparms.mvp.ui.fragment.MainFragment;
+import maple.demo.com.mymvparms.mvp.ui.fragment.MineFragment;
+import maple.demo.com.mymvparms.utils.SharedPrefUtils;
+import maple.demo.com.mymvparms.widget.NoSlidingViewPaper;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 
 public class HomeActivity extends BaseViewActivity<HomePresenter> implements HomeContract.View {
 
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.viewPaper)
+    NoSlidingViewPaper viewPager;
+    @BindView(R.id.btottomnav_view)
+    BottomNavigationView bottomNavigationView;
+    @Inject
+    HomePresenter mPresenter;
+
     private long lastBackPressedMillis;
+    private HomePagerAdapter mPagerAdapter;
 
 
     @Override
@@ -41,8 +73,41 @@ public class HomeActivity extends BaseViewActivity<HomePresenter> implements Hom
     }
     @Override
     public void initData(Bundle savedInstanceState) {
+        SharedPrefUtils.putBoolean(AppConstant.SaveInfoKey.HASLANCHER,false);
+        List<Fragment> mList = new ArrayList<>();
+        mList.add(MainFragment.getInstance());
+        mList.add(MineFragment.getInstance());
+        mPagerAdapter = new HomePagerAdapter(this.getSupportFragmentManager(),mList);
+        viewPager.setAdapter(mPagerAdapter);
+        viewPager.setCurrentItem(0);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.home_main:
+                    viewPager.setCurrentItem(0);
+                    return true;
+                case R.id.home_mine:
+                    viewPager.setCurrentItem(1);
+                    return true;
+            }
+            return false;
+        });
     }
 
+    @Override
+    protected void initImmersionBar() {
+        mImmersionBar = ImmersionBar.with(this);
+        mImmersionBar.keyboardEnable(true)
+                .navigationBarWithKitkatEnable(false)
+                .navigationBarEnable(false)
+                .titleBar(R.id.toolbar)
+                .init();
+    }
+
+    @Override
+    protected boolean isShowBack() {
+        return false;
+    }
 
     @Override
     public void showLoading() {
@@ -88,4 +153,8 @@ public class HomeActivity extends BaseViewActivity<HomePresenter> implements Hom
     }
 
 
+    @Override
+    public Activity getActivity() {
+        return this;
+    }
 }

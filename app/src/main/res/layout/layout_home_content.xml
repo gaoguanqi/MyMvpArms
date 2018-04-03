@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <include layout="@layout/include_title"/>
+
+    <maple.demo.com.mymvparms.widget.NoSlidingViewPaper
+        android:id="@+id/viewPaper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/background_default" />
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/btottomnav_view"
+        android:layout_width="match_parent"
+        android:layout_height="120px"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/navigation"
+        />
+</com.zhy.autolayout.AutoLinearLayout>

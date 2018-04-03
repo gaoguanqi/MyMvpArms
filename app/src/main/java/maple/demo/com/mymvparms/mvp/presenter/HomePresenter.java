@@ -6,6 +6,10 @@ import com.jess.arms.integration.AppManager;
 import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.mvp.BasePresenter;
 import com.jess.arms.http.imageloader.ImageLoader;
+import com.jess.arms.utils.PermissionUtil;
+import com.tbruyelle.rxpermissions2.RxPermissions;
+
+import java.util.List;
 
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 
@@ -41,4 +45,22 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
         this.mApplication = null;
     }
 
+//    public void requestPermission() {
+//        PermissionUtil.externalStorage(new PermissionUtil.RequestPermission() {
+//            @Override
+//            public void onRequestPermissionSuccess() {
+//                mRootView.showMessage("onRequestPermissionSuccess");
+//            }
+//
+//            @Override
+//            public void onRequestPermissionFailure(List<String> permissions) {
+//                mRootView.showMessage("onRequestPermissionFailure:"+permissions.toString());
+//            }
+//
+//            @Override
+//            public void onRequestPermissionFailureWithAskNeverAgain(List<String> permissions) {
+//                mRootView.showMessage("onRequestPermissionFailureWithAskNeverAgain:"+permissions.toString());
+//            }
+//        }, new RxPermissions(mRootView.getActivity()),mErrorHandler);
+//    }
 }

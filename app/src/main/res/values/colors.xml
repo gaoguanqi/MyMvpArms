@@ -4,12 +4,14 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+
+
     <!--以下是本项目色值-->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="trans">#00000000</color>
-    <color name="toolbar_color">#FFFFFF</color>
-    <color name="status_color">#FFFFFF</color>
+    <color name="toolbar_color">#303F9F</color>
+    <color name="status_color">#303F9F</color>
     <color name="progress_color">#4F86BF</color>
 
     <color name="background_default">#AABBCC</color>
