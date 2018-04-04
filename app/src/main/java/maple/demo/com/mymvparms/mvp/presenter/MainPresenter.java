@@ -54,7 +54,7 @@ public class MainPresenter extends BasePresenter<MainContract.Model, MainContrac
         mModel.requestData(type,page).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .compose(RxLifecycleUtils.bindToLifecycle(mRootView))
-                .subscribe(new ProgressObserver<ResultEntity<List<ShileEntity>>>(mErrorHandler) {
+                .subscribe(new ProgressObserver<ResultEntity<List<ShileEntity>>>(mRootView.getActivity(),mErrorHandler) {
                     @Override
                     public void onSuccess(ResultEntity<List<ShileEntity>> response) {
                         mRootView.requestDataSucess(response.getData());
