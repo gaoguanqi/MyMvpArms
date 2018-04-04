@@ -57,12 +57,12 @@ public class MainPresenter extends BasePresenter<MainContract.Model, MainContrac
                 .subscribe(new ProgressObserver<ResultEntity<List<ShileEntity>>>(mErrorHandler) {
                     @Override
                     public void onSuccess(ResultEntity<List<ShileEntity>> response) {
-                        mRootView.showMessage("onSuccess"+response.getData());
+                        mRootView.requestDataSucess(response.getData());
                     }
 
                     @Override
                     public void onFail(ResultEntity<List<ShileEntity>> response) {
-                        mRootView.showMessage("onFail");
+                        mRootView.showMessage(response.getMsg());
                     }
                 });
     }

@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.gyf.barlibrary.ImmersionBar;
+import com.jess.arms.base.BaseHolder;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.zhy.autolayout.AutoRelativeLayout;
@@ -37,6 +38,7 @@ import maple.demo.com.mymvparms.di.module.HomeModule;
 import maple.demo.com.mymvparms.mvp.contract.HomeContract;
 import maple.demo.com.mymvparms.mvp.presenter.HomePresenter;
 import maple.demo.com.mymvparms.mvp.ui.adapter.HomePagerAdapter;
+import maple.demo.com.mymvparms.mvp.ui.adapter.main.MainAdapter;
 import maple.demo.com.mymvparms.mvp.ui.fragment.MainFragment;
 import maple.demo.com.mymvparms.mvp.ui.fragment.MineFragment;
 import maple.demo.com.mymvparms.utils.SharedPrefUtils;
@@ -59,6 +61,7 @@ public class HomeActivity extends BaseViewActivity<HomePresenter> implements Hom
     HomePagerAdapter mPagerAdapter;
 
     private long lastBackPressedMillis;
+
 
 
 
@@ -154,6 +157,7 @@ public class HomeActivity extends BaseViewActivity<HomePresenter> implements Hom
     public void showMessage(@NonNull String message) {
         checkNotNull(message);
         ArmsUtils.snackbarText(message);
+
     }
 
     @Override

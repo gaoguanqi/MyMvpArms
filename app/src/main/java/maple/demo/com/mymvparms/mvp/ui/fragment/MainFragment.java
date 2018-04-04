@@ -12,20 +12,29 @@ import android.view.ViewGroup;
 
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
+import com.jess.arms.http.imageloader.ImageLoader;
+import com.jess.arms.http.imageloader.glide.ImageConfigImpl;
 import com.jess.arms.utils.ArmsUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import maple.demo.com.mymvparms.R;
+import maple.demo.com.mymvparms.app.AppController;
 import maple.demo.com.mymvparms.base.BaseLazyFragment;
 import maple.demo.com.mymvparms.base.BaseViewFragment;
 import maple.demo.com.mymvparms.di.component.DaggerHomeComponent;
 import maple.demo.com.mymvparms.di.component.DaggerMainComponent;
 import maple.demo.com.mymvparms.di.module.HomeModule;
 import maple.demo.com.mymvparms.di.module.MainModule;
+import maple.demo.com.mymvparms.entity.ShileEntity;
 import maple.demo.com.mymvparms.mvp.contract.MainContract;
 import maple.demo.com.mymvparms.mvp.presenter.MainPresenter;
+import maple.demo.com.mymvparms.mvp.ui.adapter.main.BannerPagerAdapter;
+import maple.demo.com.mymvparms.mvp.ui.adapter.main.MainAdapter;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
@@ -43,7 +52,7 @@ public class MainFragment extends BaseViewFragment<MainPresenter> implements Mai
     @Inject
     LinearLayoutManager linearLayoutManager;
 
-
+    private MainAdapter mainAdapter;
 
     public static Fragment getInstance() {
         return new MainFragment();
@@ -74,7 +83,8 @@ public class MainFragment extends BaseViewFragment<MainPresenter> implements Mai
         swipeRefreshLayout.setColorSchemeColors(ArmsUtils.getColor(getActivity(),R.color.colorAccent));
         mStatusLayoutManager.showContent();
         recyclerView.setLayoutManager(linearLayoutManager);
-
+        mainAdapter = new MainAdapter(getActivity());
+        recyclerView.setAdapter(mainAdapter);
         mPresenter.requestData("2","1");
     }
 
@@ -108,5 +118,20 @@ public class MainFragment extends BaseViewFragment<MainPresenter> implements Mai
     @Override
     public void killMyself() {
         getActivity().finish();
+    }
+
+    @Override
+    public void requestDataSucess(List<ShileEntity> data) {
+        mainAdapter.setListData(data);
+        List<String> mHeaderList = new ArrayList<>();
+        mHeaderList.add("https://www.baidu.com/img/bd_logo1.png?where=super");
+        mHeaderList.add("https://www.baidu.com/img/bd_logo1.png?where=super");
+        mHeaderList.add("https://www.baidu.com/img/bd_logo1.png?where=super");
+        mHeaderList.add("https://www.baidu.com/img/bd_logo1.png?where=super");
+        mHeaderList.add("https://www.baidu.com/img/bd_logo1.png?where=super");
+
+        mainAdapter.setHeaderData(mHeaderList);
+        String footerData = data.size()+"";
+        mainAdapter.setFooterData(footerData);
     }
 }
