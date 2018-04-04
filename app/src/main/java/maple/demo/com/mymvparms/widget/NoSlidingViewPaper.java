@@ -26,6 +26,7 @@ public class NoSlidingViewPaper extends ViewPager {
     /*
      * 可以啥都不做
      */
+    @Override
     public boolean onTouchEvent(MotionEvent arg0) {
         return false;
     }
