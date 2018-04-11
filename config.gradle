@@ -33,7 +33,9 @@ ext {
             "recyclerview-v7"          : "com.android.support:recyclerview-v7:${version["androidSupportSdkVersion"]}",
             "percent"                 :"com.android.support:percent:${version[ "androidSupportSdkVersion"]}",
 
-            "mvp-arms"                 :"me.jessyan:arms:2.4.0",
+            "mvp-arms"                 :"me.jessyan:arms:2.4.1",
+
+
             //network
             "retrofit"                 : "com.squareup.retrofit2:retrofit:${version["retrofitSdkVersion"]}",
             "retrofit-converter-gson"  : "com.squareup.retrofit2:converter-gson:${version["retrofitSdkVersion"]}",
@@ -46,6 +48,7 @@ ext {
             "glide-loader-okhttp3"     : "com.github.bumptech.glide:okhttp3-integration:${version["glideSdkVersion"]}",
             "picasso"                  : "com.squareup.picasso:picasso:2.5.2",
 
+
             //view
             "autolayout"               : "com.zhy:autolayout:1.4.5",
             "butterknife"              : "com.jakewharton:butterknife:${version["butterknifeSdkVersion"]}",
@@ -56,6 +59,7 @@ ext {
             "nineoldandroids"          : "com.nineoldandroids:library:2.4.0",
             "paginate"                 : "com.github.markomilos:paginate:0.5.1",
             "vlayout"                  : "com.alibaba.android:vlayout:1.1.0@aar",
+
 
             //rx1
             "rxandroid"                : "io.reactivex:rxandroid:1.2.1",
@@ -83,6 +87,7 @@ ext {
             "rxbinding-v4"            : "com.jakewharton.rxbinding2:rxbinding-support-v4:${version["rxbinding"]}",
             "rxbinding-v7"            : "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:${version["rxbinding"]}",
 
+
             //tools
             "dagger2"                  : "com.google.dagger:dagger:${version["dagger2SdkVersion"]}",
             "dagger2-android"          : "com.google.dagger:dagger-android:${version["dagger2SdkVersion"]}",
@@ -99,6 +104,8 @@ ext {
             "progressmanager"          : "me.jessyan:progressmanager:1.5.0",
             "retrofit-url-manager"     : "me.jessyan:retrofit-url-manager:1.2.5",
             "lifecyclemodel"           : "me.jessyan:lifecyclemodel:1.0.1",
+
+
 
             "greendao"                : "org.greenrobot:greendao:${GREENDAO_VERSION}",
             "GreenDaoUpgradeHelper"   : "com.github.yuweiguocn:GreenDaoUpgradeHelper:v2.0.1",
